@@ -7,7 +7,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="title">
-          I am an Example App Running in the Cloud1
+          I am an React App Running in the Cloud in Amazon S3 Bucket
         </div>
       </div>
     );
