@@ -36,7 +36,7 @@ jobs:
       - attach_workspace:
           at: .
       - checkout
-      - run: aws s3 sync ./app/build s3://circle-ci-bucket/*
+      - run: aws s3 sync ./app/build s3://circle-ci-bucket
     
 
 workflows:
