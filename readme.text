@@ -1,1 +1,43 @@
+----------------------------------------------------------------To Check and kill the PID of port------------------------------------------------------------
+C:\Users\abhishesrivasta6>netstat -ano | findstr :3000
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       14288
+
+C:\Users\abhishesrivasta6>taskkill /PID 14288 /F
+SUCCESS: The process with PID 14288 has been terminated.
+
+----------------------------------------------------------------Project Steps--------------------------------------------------------------------------------
 follow this : https://www.youtube.com/watch?v=sh-MjDLyrgE
+
+1.Create account in CircleCi : login with github (easy to get repo)
+			       Select Project Repo
+			       Select Branch where config.yaml is present. (In this case Develop branch has been used)
+                               Add environment variables : AWS_ACCESS_KEY_ID	
+							   AWS_REGION
+							   AWS_SECRET_ACCESS_KEY
+			       Project setup is done
+
+2. Working on Project Folder for Git  push : edit files and folders
+					     git push origin to develop
+					     CircleCI will be triggered and start building and testing an deploying.
+
+3.Setting up AWS : create IAM user : create access keys described in 2 step
+				     add policy : AmazonS3FullAccess
+  		   create S3 bucket : enable all public access
+				      add bucket policy :
+                                                         {
+    								"Version": "2012-10-17",
+ 							        "Statement": [
+							        {
+							          "Sid": "AddPermission",
+  						                  "Effect": "Allow",
+       					         		  "Principal": "*",
+   					                          "Action": "s3:GetObject",
+     								  "Resource": "arn:aws:s3:::circle-ci-bucket/*"
+     							        }
+  							    ]
+							}
+
+Note: if any step missed follow the youtube tutorial to complete the project.
+
+use : bucket name as circle-ci-bucket and region - Asia Pacific (Mumbai)
+"ap-south-1"
