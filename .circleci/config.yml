@@ -20,7 +20,7 @@ jobs:
           path: /tmp/python-artifact
           destination: artifact-file
       - persist_to_workspace:
-          root: /tmp/python-artifact
+          root: /tmp
           paths:
             - /tmp/python-artifact
   test:
