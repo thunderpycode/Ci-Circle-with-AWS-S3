@@ -19,8 +19,9 @@ jobs:
           destination: artifact-file
       - persist_to_workspace:
           root: ~/tmp
-          paths: /tmp/python-artifact
+          path:  /tmp/python-artifact
             
+  test:
     machine:
       image: ubuntu-2004:202010-01
     steps:
