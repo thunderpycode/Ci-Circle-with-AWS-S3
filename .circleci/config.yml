@@ -21,7 +21,7 @@ jobs:
           root: .
           paths:
             - .
-            - /tmp/python-artifact
+            
   test:
     machine:
       image: ubuntu-2004:202010-01
