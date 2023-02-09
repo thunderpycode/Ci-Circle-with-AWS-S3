@@ -5,6 +5,8 @@ C:\Users\abhishesrivasta6>netstat -ano | findstr :3000
 C:\Users\abhishesrivasta6>taskkill /PID 14288 /F
 SUCCESS: The process with PID 14288 has been terminated.
 
+install npm module : npm install react-scripts --save
+
 ----------------------------------------------------------------Project Steps--------------------------------------------------------------------------------
 follow this : https://www.youtube.com/watch?v=sh-MjDLyrgE
 
